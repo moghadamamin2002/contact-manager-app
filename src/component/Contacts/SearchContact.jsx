@@ -1,6 +1,6 @@
-import {PURPLE , COMMENT } from "../../helpers/color";
+import { PURPLE } from "../../helpers/color";
 
-const SearchContact = () => {
+const SearchContact = ({ query, search }) => {
   return (
     <div className="input-group mx-2 w-75" dir="ltr">
       <span
@@ -13,14 +13,15 @@ const SearchContact = () => {
       <input
         dir="rtl"
         type="text"
-        style={{ backgroundColor: COMMENT, borderColor: PURPLE}}
+        value={query.text}
+        onChange={search}
         className="form-control"
-        placeholder="حستحوی مخاطبین"
+        placeholder="جستجوی نویسنده"
         aria-label="Search"
         aria-describedby="basic-addon1"
-        color=""
       />
     </div>
   );
 };
+
 export default SearchContact;
